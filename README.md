@@ -1,16 +1,25 @@
-# React + Vite
+# BeldiMarket 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Description
+BeldiMarket is an e-commerce platform designed for selling traditional Moroccan handicraft products online. It provides a modern and intuitive interface tailored for young Moroccans, tourists, and Moroccan craft enthusiasts. The project aims to promote Moroccan craftsmanship by making it accessible through a high-performance web application.
 
-Currently, two official plugins are available:
+### Technologies Utilisées 
+* **React 18.3+**
+* **Vite 5+**
+* **React Router v6**
+* **Tailwind CSS**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation 
+1. `npm install`
+2. `npm run dev`
 
-## React Compiler
+### Fonctionnalités 
+* Catalogue de produits artisanaux (Tajines, Babouches, Tapis...).
+* Recherche et filtrage par catégorie et prix.
+* Gestion du panier (Ajouter, Supprimer, Quantité).
+* Design responsive (Mobile-first).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Auteur 
+* **Nom**: Aziz Aitbihi
+* **Établissement**: ISTA Mirleft
+* **Année**: 2025/2026
