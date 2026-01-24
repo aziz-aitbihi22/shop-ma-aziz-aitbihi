@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// تبديل name بـ title في الـ props 
-const ProductCard = ({ title, price, image, category, rating }) => {
+const ProductCard = ({ id, title, price, image, category, addToCart }) => {
+  // حالة محلية باش نبدلو شكل الزر للحظات مالي نضغطو عليه
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    const productToAdd = { id, title, price, image, qty: 1 };
+    
+    if (addToCart) {
+      addToCart(productToAdd); // هادي غاتعيط للـ Toast في App.jsx
+      
+      // تأثير بصري محلي على الزر
+      setIsAdded(true);
+      setTimeout(() => setIsAdded(false), 1000); 
+    }
+  };
+
   return (
-    <div style={{ border: '1px solid #eee', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-      {/* عرض الصورة والفئة */}
-      <img src={image} alt={title} style={{ width: '100%', height: '200px', objectFit: 'contain' }} />
-      <p style={{ color: '#888', fontSize: '12px' }}>{category}</p>
-      
-      {/* عرض العنوان الجديد  */}
-      <h3 style={{ fontSize: '16px', height: '50px', overflow: 'hidden' }}>{title}</h3>
-      
-      {/* عرض الثمن والتقييم (اختياري) */}
-      <p style={{ fontWeight: 'bold', color: '#2c3e50' }}>{price} DH</p>
-      
-      {rating && (
-        <span style={{ fontSize: '12px', color: '#f1c40f' }}>
-          ⭐ {rating.rate} ({rating.count})
-        </span>
-      )}
+    <div className="modern-card">
+      <div className="image-wrapper">
+        <img src={image} alt={title} className="product-img" />
+      </div>
+
+      <div className="card-content">
+        <span className="category-tag">{category}</span>
+        <h3 className="product-title">{title}</h3>
+        
+        <div className="price-tag">
+          {price} <span className="currency">DH</span>
+        </div>
+
+        <div className="button-group">
+          <Link to={`/products/${id}`} className="btn-secondary">
+            Détails
+          </Link>
+
+          <button 
+            className={`btn-primary ${isAdded ? 'btn-success-animation' : ''}`}
+            onClick={handleAddToCart}
+            disabled={isAdded}
+          >
+            {isAdded ? '✔ Ajouté' : 'Ajouter au Panier'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

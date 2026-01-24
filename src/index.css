@@ -1,68 +1,47 @@
+/* الألوان الجديدة ديالك */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-1: #DFF2EB;
+  --color-2: #B9E5E8;
+  --color-3: #7AB2D3;
+  --color-4: #4A628A;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  /* خلفية الموقع بلون هادئ مستوحى من ألوانك */
+  background-color: #f0f4f8 !important; 
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  display: block !important;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* النيبار يشد العرض كامل */
+.navbar {
+  width: 100% !important;
+  background-color: #4A628A !important; /* اللون الغامق */
+  padding: 1rem 5% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.navbar ul {
+  list-style: none !important;
+  display: flex !important;
+  gap: 25px !important;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.navbar a {
+  color: #DFF2EB !important; /* الكتابة بالفاتح */
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+.navbar a:hover {
+  color: #B9E5E8 !important;
 }
