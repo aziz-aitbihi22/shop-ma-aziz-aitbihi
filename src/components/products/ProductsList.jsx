@@ -27,28 +27,11 @@ function ProductsList() {
 
   return (
     <div className="products-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
-      {/* 4. عرض القائمة باستخدام map [cite: 151] */}
       {products.map(p => (
         <ProductCard key={p.id} {...p} /> 
       ))}
     </div>
   );
-// داخل مكون ProductsList وقبل الـ return ديال القائمة
-const handleRefresh = () => {
-  setLoading(true);
-  // الكود اللي كيعاود الـ Fetch
-  fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(data => {
-      setProducts(data);
-      setLoading(false);
-    });
-};
-
-// فوسط الـ return (مثلا فوق الـ grid)
-<button onClick={handleRefresh} style={{ marginBottom: '20px' }}>
-  Rafraîchir la liste 🔄
-</button>
 }
 
 export default ProductsList;

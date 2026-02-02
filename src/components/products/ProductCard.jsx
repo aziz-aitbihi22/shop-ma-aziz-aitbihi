@@ -2,16 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ id, title, price, image, category, addToCart }) => {
-  // حالة محلية باش نبدلو شكل الزر للحظات مالي نضغطو عليه
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
     const productToAdd = { id, title, price, image, qty: 1 };
     
     if (addToCart) {
-      addToCart(productToAdd); // هادي غاتعيط للـ Toast في App.jsx
+      addToCart(productToAdd);
       
-      // تأثير بصري محلي على الزر
       setIsAdded(true);
       setTimeout(() => setIsAdded(false), 1000); 
     }

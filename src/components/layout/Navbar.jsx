@@ -1,19 +1,45 @@
 import { NavLink, Link } from 'react-router-dom';
+import useTheme from '../../hooks/useTheme'; // استيراد الـ Hook اللي صاوبنا
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <nav className="navbar" style={{ backgroundColor: '#4A628A', width: '100%' }}>
+    <nav className="navbar-premium">
       <div className="logo">
-        <Link to="/" style={{ color: '#DFF2EB', fontSize: '1.5rem', fontWeight: 'bold', textDecoration: 'none' }}>
-          Shop.ma
+        <Link to="/" className="logo-text">
+          Shop<span>.ma</span>
         </Link>
       </div>
-      <ul style={{ display: 'flex', gap: '20px', listStyle: 'none' }}>
-        <li><NavLink to="/" style={({isActive}) => ({ color: isActive ? '#B9E5E8' : '#DFF2EB', textDecoration: 'none' })}>Accueil</NavLink></li>
-        <li><NavLink to="/products" style={({isActive}) => ({ color: isActive ? '#B9E5E8' : '#DFF2EB', textDecoration: 'none' })}>Produits</NavLink></li>
-        <li><NavLink to="/cart" style={({isActive}) => ({ color: isActive ? '#B9E5E8' : '#DFF2EB', textDecoration: 'none' })}>Panier</NavLink></li>
-        <li><NavLink to="/contact" style={({isActive}) => ({ color: isActive ? '#B9E5E8' : '#DFF2EB', textDecoration: 'none' })}>Contact</NavLink></li>
+
+      <ul className="nav-links-list">
+        <li>
+          <NavLink to="/" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>
+            Accueil
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/products" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>
+            Produits
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>
+            Contact
+          </NavLink>
+        </li>
       </ul>
+
+      <div className="nav-actions">
+        <button onClick={toggleTheme} className="theme-toggle-btn">
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
+
+        <Link to="/cart" className="nav-cart-icon">
+          <span className="cart-emoji">🛒</span>
+          {cartCount > 0 && <span className="cart-badge-count">{cartCount}</span>}
+        </Link>
+      </div>
     </nav>
   );
 };

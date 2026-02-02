@@ -46,8 +46,7 @@ function App() {
   };
 
   return (
-    <div className="app-wrapper" style={{ backgroundColor: '#F8FAFC', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      
+     <div className="app-wrapper">      
       {/* تمرير عدد العناصر للـ Navbar */}
       <Navbar cartCount={cart.reduce((acc, item) => acc + item.qty, 0)} />
       

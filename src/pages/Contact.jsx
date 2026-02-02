@@ -7,7 +7,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // محاكاة عملية الإرسال مع أنيميشن
     setTimeout(() => {
       alert('Merci Aziz! Votre message a été envoyé avec succès.');
       setForm({ nom: '', email: '', message: '' });
@@ -18,10 +17,8 @@ const Contact = () => {
   return (
     <div className="contact-container main-content">
       <div className="contact-grid">
-        {/* معلومات التواصل - ستايل Apple */}
 <div className="contact-premium-wrapper">
 
-  {/* العنوان الرئيسي احترافي */}
 
   <h1 className="contact-title">
 
@@ -40,10 +37,6 @@ const Contact = () => {
     Notre équipe d'experts est à votre écoute pour vous accompagner. 
 
   </p>
-
-
-
-  {/* بطاقة المعلومات بستايل الصورة الأصلية */}
 
   <div className="contact-card-modern">
 
@@ -65,7 +58,6 @@ const Contact = () => {
 
 </div> 
 
-        {/* الفورم - ستايل Stripe/SaaS */}
 <div className="contact-form-premium">
   <form className="modern-form-inner">
     <div className="form-group-apple">

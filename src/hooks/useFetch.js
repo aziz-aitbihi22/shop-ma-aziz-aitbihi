@@ -6,7 +6,6 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // كود جلب البيانات
     fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error("Erreur de récupération des données");
@@ -20,9 +19,9 @@ const useFetch = (url) => {
         setError(err.message);
         setLoading(false);
       });
-  }, [url]); // كيتعاود غير إلا تبدل الـ URL
+  }, [url]); 
 
-  return { data, loading, error }; // إرجاع النتائج المطلوبة
+  return { data, loading, error }; 
 };
 
 export default useFetch;

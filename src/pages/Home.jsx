@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="home-container main-content">
-      {/* Hero Section - Apple Style */}
       <section className="hero-section">
         <h1 className="hero-title">L'artisanat marocain, <br /><span>redéfini pour vous.</span></h1>
         <p className="hero-subtitle">
@@ -22,7 +21,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section - Stripe Style */}
       <section className="features-grid">
         <div className="feature-card">
           <div className="feature-icon">✨</div>

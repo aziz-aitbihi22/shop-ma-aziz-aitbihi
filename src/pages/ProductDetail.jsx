@@ -25,7 +25,6 @@ const ProductDetail = ({ addToCart }) => {
           <p className="detail-price">{product.price} DH</p>
           <p className="detail-description">{product.description}</p>
 
-          {/* التعديل هنا: حذفنا alert() وعوضناه بـ addToCart نيشان */}
           <button 
             className="btn-primary-large"
             onClick={() => addToCart(product)} 

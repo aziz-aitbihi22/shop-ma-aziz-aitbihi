@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Cart = ({ cartItems, updateQty, removeFromCart }) => {
-  // حساب المجموع الإجمالي حسب متطلبات المشروع 
   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
-  const tva = subtotal * 0.20; // الضريبة 20% 
+  const tva = subtotal * 0.20;  
   const totalTTC = subtotal + tva;
 
   return (
@@ -78,7 +77,6 @@ const Cart = ({ cartItems, updateQty, removeFromCart }) => {
             ))}
           </div>
 
-          {/* خلاصة الحساب الإجمالي - Stripe Style Sidebar  */}
           <div style={{ 
             background: 'white', 
             padding: '30px', 
